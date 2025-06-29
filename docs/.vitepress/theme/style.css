@@ -1,0 +1,30 @@
+/* 首页 "surprise" 标题渐变色效果 */
+:root {
+  --vp-home-hero-name-color: transparent;
+}
+
+.VPHomeHero .name,
+.VPHero .name,
+.name.main-title,
+.title-text,
+.main-title {
+  background-image: linear-gradient(to right, #FEDD4F, #FE8226);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  font-weight: bold;
+  background-size: 200% 100%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
