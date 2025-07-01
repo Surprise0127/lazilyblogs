@@ -18,7 +18,7 @@ export default defineConfig({
       { text: '408', link: '/guide/408/' },
       { text: '方法论', link: '/guide/methodology/' },
       { text: 'leetcode', link: '/guide/leetcode/' },
-      { text: '关于练习生', link: '/guide/about/' }
+      { text: '关于', link: '/guide/about/' }
     ],
 
     // 侧边栏
@@ -72,9 +72,12 @@ export default defineConfig({
       ],
       '/guide/frontend/': [
         {
-          text: '前端',
+          text: 'ikun前端',
+          link: '/guide/frontend/',
+          collapsed: true,
           items: [
-            { text: '前端概览', link: '/guide/frontend/' }
+            { text: 'ikun前端', link: '/guide/frontend/' },
+            { text: '前端技术栈', link: '/guide/frontend/tech-stack' }
           ]
         }
       ],
@@ -112,9 +115,10 @@ export default defineConfig({
       ],
       '/guide/about/': [
         {
-          text: '关于练习生',
+          text: '关于',
           items: [
-            { text: '两年半练习生', link: '/guide/about/' }
+            { text: 'surprise', link: '/guide/about/' },
+            { text: '两年半练习生', link: '/guide/about/ikun' }
           ]
         }
       ]
