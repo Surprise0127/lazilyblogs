@@ -1,7 +1,6 @@
 import { defineConfig } from 'vitepress'
-import { nav } from './configs/nav'
 import { sidebar } from './configs/sidebar'
-import { socialLinks, footer, search } from './configs/theme'
+import { socialLinks, footer, search, nav } from './configs/theme'
 import mathjax3 from 'markdown-it-mathjax3'
 
 
