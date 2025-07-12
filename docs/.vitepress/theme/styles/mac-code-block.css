@@ -1,0 +1,93 @@
+/* Mac 风格代码块 */
+:root {
+  /* Mac风格代码块的自定义变量 */
+  --mac-titlebar-light: var(--vp-c-bg-soft);
+  --mac-titlebar-dark: var(--vp-c-bg-soft);
+  --mac-titlebar-border-light: var(--vp-c-divider);
+  --mac-titlebar-border-dark: var(--vp-c-divider);
+  --mac-button-close: #ff5f56;
+  --mac-button-minimize: #ffbd2e;
+  --mac-button-maximize: #27c93f;
+}
+
+/* 为深色模式设置变量 */
+.dark {
+  --mac-titlebar-light: var(--vp-c-bg-soft);
+  --mac-titlebar-border-light: var(--vp-c-divider);
+}
+
+/* Mac 风格代码块 */
+div[class*='language-'] {
+  position: relative;
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--vp-code-block-bg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+}
+
+div[class*='language-']::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: var(--mac-titlebar-light);
+  border-bottom: 1px solid var(--mac-titlebar-border-light);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  z-index: 2;
+}
+
+div[class*='language-']::after {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 15px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--mac-button-close);
+  box-shadow: 
+    25px 0 0 var(--mac-button-minimize),
+    50px 0 0 var(--mac-button-maximize);
+  z-index: 3;
+  /* 按钮颜色保持不变，这是Mac风格的固定特色 */
+}
+
+div[class*='language-'] pre {
+  margin-top: 30px !important;
+  background-color: transparent !important;
+}
+
+div[class*='language-'] code {
+  padding: 0 1.4rem 1.4rem;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+/* 适配语言标签的位置 */
+div[class*='language-'] span.lang {
+  right: 14px !important;
+}
+
+/* 适配复制按钮的位置和样式 */
+div[class*='language-'] button.copy {
+  top: 3px !important;
+  right: 12px !important;
+  z-index: 3;
+  opacity: 0.7;
+  height: 24px !important;
+  width: 24px !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  /* 控制状态变化的过渡动画效果 */
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+/* "已复制"文本的样式 */
+div[class*='language-'] button.copy.copied::before {
+  content: "已复制" !important;
+  height: 24px !important;
+  /* background-color: #27c93f !important; */
+}
